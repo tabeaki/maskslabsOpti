@@ -65,7 +65,7 @@ const Home: NextPage = () => {
           method: 'wallet_addEthereumChain',
           params: [{
             chainId: '0x4',
-            chainName: 'Rinkeby',
+            chainName: 'Rinkeby Test Network',
             nativeCurrency: {
                 name: 'ETH',
                 symbol: 'ETH',
