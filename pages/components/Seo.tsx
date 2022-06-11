@@ -20,7 +20,7 @@ const Seo: VFC<MetaData> = ({
   pageImgHeight
 }) => {
   const defaultTitle = 'Witch Verse Labs-Opti'
-  const defaultDescription = 'Zodiac Signs x Witches x Echi-Echi = Strongest The project is aimed at a crypto-native IP. It is planned to be a manga and a game in the future. Please buy your constellation witch or your guess. We also plan to airdrop NFT in other chains if you are holding.'
+  const defaultDescription = 'Optimism ETH Masks (Price: Free Mint) -NFT in our beginnings. -Collection of 6,000 pieces in Free Mint. -We will register TofuNFT, etc. -We want to collaborate a lot more than just Optimism! -We will not collaborate if there is a cost involved.'
 
   const title = defaultTitle
   const description = defaultDescription
