@@ -21,7 +21,7 @@ const abi = [
   "function ownerMint(uint256 count) public onlyOwner ",
   "function is_presaleActive() public view returns (bool)",
 ]
-const contractAddress = "0x7b2152E51130439374672AF463b735a59a47ea85"
+const contractAddress = "0x181cfbEC7E833c7097371be93d4a14EC1e48a7e0"
 const notify = () => toast('Starting to execute a transaction')
 
 const Home: NextPage = () => {
@@ -64,14 +64,14 @@ const Home: NextPage = () => {
         await (window as any).ethereum.request({
           method: 'wallet_addEthereumChain',
           params: [{
-            chainId: '0x3',
-            chainName: 'Ropsten Test Network',
+            chainId: '0x4',
+            chainName: 'Rinkeby',
             nativeCurrency: {
                 name: 'ETH',
                 symbol: 'ETH',
-                decimals: 3,
+                decimals: 4,
             },
-            rpcUrls: ['https://ropsten.infura.io/v3/4SdLC1pDoRVbPmZV1yAeeL0Pq7H34I2S'],
+            rpcUrls: ['https://rinkeby.infura.io/v3/Qs9JnJoxhd2_LYTM8hL_mpFabw0anMZE'],
           }],
         })
         console.log("try");
@@ -93,23 +93,14 @@ const Home: NextPage = () => {
       const provider = new ethers.providers.Web3Provider((window as any).ethereum)
       const accounts =  await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner()
-      const tokenPrice = "100";
+      const tokenPrice = "0.001";
       const contract = new ethers.Contract(contractAddress, abi, signer);
-      if(presaleActive == true){
-        try{
-          await contract.preMint({value: ethers.utils.parseEther(tokenPrice)});
-          toast('Starting to execute a transaction')
-        }catch(error){
-          toast('Not on the whitelist Or Connect to Astar NetWork Or Out of Fund')
-        }
-      } else {
         try{
           await contract.publicMint({value: ethers.utils.parseEther(tokenPrice)});
           toast('Starting to execute a transaction')
         }catch(error){
-          toast('Connect to Astar NetWork Or Out of Fund')
+          toast('Not on the whitelist Or Connect to Astar NetWork Or Out of Fund')
         }
-      }
     };
     
     return <>
