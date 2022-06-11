@@ -64,14 +64,14 @@ const Home: NextPage = () => {
         await (window as any).ethereum.request({
           method: 'wallet_addEthereumChain',
           params: [{
-            chainId: '0x4',
-            chainName: 'Rinkeby Test Network',
+            chainId: '0x3',
+            chainName: 'Ropsten Test Network',
             nativeCurrency: {
                 name: 'ETH',
                 symbol: 'ETH',
-                decimals: 4,
+                decimals: 3,
             },
-            rpcUrls: ['https://rinkeby.infura.io/v3/'],
+            rpcUrls: ['https://ropsten.infura.io/v3/4SdLC1pDoRVbPmZV1yAeeL0Pq7H34I2S'],
           }],
         })
         console.log("try");
@@ -113,13 +113,14 @@ const Home: NextPage = () => {
     };
     
     return <>
-    <div className="flex flex-wrap buttom justify-center bg-[url('/background.gif')] bg-center bg-cover">
-      <div className="m-16 px-2 py-20 lg:px-20 lg:py-16 border-double border-8 rounded-md bg-black text-center bg-center bg-contain bg-no-repeat">
-          <h3 className="text-xs lg:text-4xl text-white font-semibold ">Optimism NFT</h3>
+    <div className="flex flex-wrap buttom justify-center bg-black bg-center bg-cover">
+      <div className="m-16 px-2 py-20 lg:px-20 lg:py-4 border-double border-8 rounded-md bg-black text-center bg-center bg-contain bg-no-repeat">
+          <h3 className="text-xs lg:text-4xl text-white font-semibold ">Optimism Mask NFT</h3>
           <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT</h1>
           <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>        
           { paused && <h3 className="text-lg lg:text-3xl pt-1 text-white font-semibold ">Wait until the sale</h3>}
           { (mintNum < 12000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900" onClick={MetaMuskConnect}>FREE MINT</button>}
+          <div className="py-4"><Image src="/OP_ETH_masks_GIF.gif" alt="Main Image" width={100} height={100}/></div>
       </div>
     </div>
     </>
@@ -130,13 +131,13 @@ const Home: NextPage = () => {
       <div className="">
       <Header />
       <Seo
-        pageTitle={'Astar Sign Witch'}
-        pageDescription={'Astar Sign Witch'}
-        pageImg={'https://sign-witch.vercel.app/_next/image?url=%2Fmain_grap.png&w=3840&q=75'}
+        pageTitle={'Witch Verse Labs'}
+        pageDescription={'Witch Verse Labs'}
+        pageImg={'https://maskslabs-opti.vercel.app/_next/image?url=%2Fmain_grap.png&w=3840&q=75'}
         pageImgWidth={1920}
         pageImgHeight={1005}
       />
-      <Image className="min-w-full" src="/main_grap.png" alt="Main Image" width={1920} height={800}/>
+      <Image className="min-w-full" src="/mainWitchVerseLabs.gif" alt="Main Image" width={1920} height={400}/>
       <MintButton />
       <Footer />
     </div></>
