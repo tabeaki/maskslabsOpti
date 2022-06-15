@@ -110,7 +110,7 @@ const Home: NextPage = () => {
           <h3 className="text-xs lg:text-4xl text-white font-semibold ">Optimism Mask NFT</h3>
           <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT : Up to 5 in the wallet</h1>
           <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>
-          { (mintNum < 12000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900" onClick={MetaMuskConnect}>FREE MINT</button>}
+          { (mintNum < 6000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900" onClick={MetaMuskConnect}>FREE MINT</button>}
           <div className="py-4"><Image src="/OP_ETH_masks_GIF.gif" alt="Main Image" width={100} height={100}/></div>
       </div>
     </div>
@@ -124,7 +124,7 @@ const Home: NextPage = () => {
       <Seo
         pageTitle={'Witch Verse Labs'}
         pageDescription={'Witch Verse Labs'}
-        pageImg={'https://maskslabs-opti.vercel.app/_next/image?url=%2Fmain_grap.png&w=3840&q=75'}
+        pageImg={'https://witchverselabs-opti.vercel.app/_next/image?url=%2Fhezder_title.png&w=384&q=75'}
         pageImgWidth={1920}
         pageImgHeight={1005}
       />
