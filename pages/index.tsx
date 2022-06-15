@@ -21,7 +21,7 @@ const abi = [
   "function ownerMint(uint256 count) public onlyOwner ",
   "function is_presaleActive() public view returns (bool)",
 ]
-const contractAddress = "0x181cfbEC7E833c7097371be93d4a14EC1e48a7e0"
+const contractAddress = "0x0D0d8d120526623f38BA3aB77344585ef219461e"
 const notify = () => toast('Starting to execute a transaction')
 
 const Home: NextPage = () => {
@@ -84,6 +84,7 @@ const Home: NextPage = () => {
       }
     }
     addChain();
+    setSaleInfo();
 
   }, []);
   // ミントボタン用
@@ -107,9 +108,8 @@ const Home: NextPage = () => {
     <div className="flex flex-wrap buttom justify-center bg-black bg-center bg-cover">
       <div className="m-16 px-2 py-20 lg:px-20 lg:py-4 border-double border-8 rounded-md bg-black text-center bg-center bg-contain bg-no-repeat">
           <h3 className="text-xs lg:text-4xl text-white font-semibold ">Optimism Mask NFT</h3>
-          <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT</h1>
-          <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>        
-          { paused && <h3 className="text-lg lg:text-3xl pt-1 text-white font-semibold ">Wait until the sale</h3>}
+          <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT : Up to 5 in the wallet</h1>
+          <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>
           { (mintNum < 12000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900" onClick={MetaMuskConnect}>FREE MINT</button>}
           <div className="py-4"><Image src="/OP_ETH_masks_GIF.gif" alt="Main Image" width={100} height={100}/></div>
       </div>
