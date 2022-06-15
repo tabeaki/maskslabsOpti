@@ -61,6 +61,7 @@ const Home: NextPage = () => {
     // add Network
     const addChain = async() => {
       try{
+        await setSaleInfo();
         await (window as any).ethereum.request({
           method: 'wallet_addEthereumChain',
           params: [{
@@ -75,7 +76,6 @@ const Home: NextPage = () => {
           }],
         })
         console.log("try");
-        setSaleInfo();
       }catch(Exeption){
         console.log("Optimism Network alleady Connected");
         console.log("catch");
