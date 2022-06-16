@@ -21,12 +21,10 @@ const abi = [
   "function ownerMint(uint256 count) public onlyOwner ",
   "function is_presaleActive() public view returns (bool)",
 ]
-const contractAddress = "0x0D0d8d120526623f38BA3aB77344585ef219461e"
+const contractAddress = "0x735439e0b73001e578243a310fe870e50fb06b57"
 const notify = () => toast('Starting to execute a transaction')
 
 const Home: NextPage = () => {
-  
-  //const tokenPrice = "450";
 
   const [mintNum, setMintNum] = useState(0);
   const [paused, setpaused] = useState(false);
@@ -42,6 +40,7 @@ const Home: NextPage = () => {
   
       const accounts =  await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner()
+      const result = Object.values(signer);
       const contract = new ethers.Contract(contractAddress, abi, signer);
 
       try{
@@ -64,14 +63,14 @@ const Home: NextPage = () => {
         await (window as any).ethereum.request({
           method: 'wallet_addEthereumChain',
           params: [{
-            chainId: '0x4',
-            chainName: 'Rinkeby',
+            chainId: '0x10',
+            chainName: 'Optimistic Ethereum',
             nativeCurrency: {
                 name: 'ETH',
                 symbol: 'ETH',
                 decimals: 4,
             },
-            rpcUrls: ['https://rinkeby.infura.io/v3/Qs9JnJoxhd2_LYTM8hL_mpFabw0anMZE'],
+            rpcUrls: ['https://mainnet.optimism.io'],
           }],
         })
         console.log("try");
@@ -100,7 +99,7 @@ const Home: NextPage = () => {
           await contract.publicMint({value: ethers.utils.parseEther(tokenPrice)});
           toast('Starting to execute a transaction')
         }catch(error){
-          toast('Not on the whitelist Or Connect to Astar NetWork Or Out of Fund')
+          toast('Your wallet is Max Mint Or Connect to Optimism')
         }
     };
     
@@ -111,6 +110,8 @@ const Home: NextPage = () => {
           <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT : Up to 5 in the wallet</h1>
           <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>
           { (mintNum < 6000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900" onClick={MetaMuskConnect}>FREE MINT</button>}
+          { (mintNum < 6000 && <Toaster/>)}
+          { (mintNum >= 6000) && <h3 className="sm:text-lg lg:text-3xl pt-1 text-white font-semibold ">End of sale</h3>}
           <div className="py-4"><Image src="/OP_ETH_masks_GIF.gif" alt="Main Image" width={100} height={100}/></div>
       </div>
     </div>
