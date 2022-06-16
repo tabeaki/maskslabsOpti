@@ -108,6 +108,7 @@ const Home: NextPage = () => {
       <div className="m-16 px-2 py-20 lg:px-20 lg:py-4 border-double border-8 rounded-md bg-black text-center bg-center bg-contain bg-no-repeat">
           <h3 className="text-xs lg:text-4xl text-white font-semibold ">Optimism Mask NFT</h3>
           <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT : Up to 5 in the wallet</h1>
+          <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">※Please make sure that the network is set to Optimism</h1>
           <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>
           { (mintNum < 6000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900" onClick={MetaMuskConnect}>FREE MINT</button>}
           { (mintNum < 6000 && <Toaster/>)}
