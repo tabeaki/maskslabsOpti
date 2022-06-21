@@ -106,7 +106,7 @@ const Home: NextPage = () => {
     return <>
     <div className="flex flex-wrap buttom justify-center bg-black bg-center bg-cover">
       <div className="m-16 px-2 py-20 lg:px-20 lg:py-4 border-double border-8 rounded-md bg-black text-center bg-center bg-contain bg-no-repeat">
-          <h3 className="text-xs lg:text-4xl text-white font-semibold ">Optimism Mask NFT</h3>
+          <h3 className="text-xs lg:text-4xl text-white font-semibold ">TokenMasks NFT</h3>
           <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT : Up to 5 in the wallet</h1>
           <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">※Please make sure that the network is set to Optimism</h1>
           <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>
