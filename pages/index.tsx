@@ -76,7 +76,7 @@ const Home: NextPage = () => {
         console.log("try");
         setSaleInfo();
       }catch(Exeption){
-        console.log("Optimism Network alleady Connected");
+        console.log("Optimism Network aleady Connected");
         console.log("catch");
       }finally{
         console.log("finally");
@@ -109,11 +109,13 @@ const Home: NextPage = () => {
           <h3 className="text-xs lg:text-4xl text-white font-semibold ">TokenMasks NFT</h3>
           <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT : Up to 5 in the wallet</h1>
           <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">※Please make sure that the network is set to Optimism</h1>
+          <a className="text-sm lg:text-2xl pt-1 text-white underline" href="https://optimistic.etherscan.io/address/0x735439e0b73001e578243a310fe870e50fb06b57" >contract address 0x735439e0b73001e578243a310fe870e50fb06b57</a><br />
           <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>
           { (mintNum < 6000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900" onClick={MetaMuskConnect}>FREE MINT</button>}
           { (mintNum < 6000 && <Toaster/>)}
           { (mintNum >= 6000) && <h3 className="sm:text-lg lg:text-3xl pt-1 text-white font-semibold ">End of sale</h3>}
           <div className="py-4"><Image src="/OP_ETH_masks_GIF.gif" alt="Main Image" width={100} height={100}/></div>
+          <a className="text-sm lg:text-2xl pt-1 text-white underline" href="https://quixotic.io/collection/0x735439E0b73001E578243A310Fe870e50Fb06b57" >market palace</a>
       </div>
     </div>
     </>
