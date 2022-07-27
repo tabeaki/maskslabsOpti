@@ -106,15 +106,14 @@ const Home: NextPage = () => {
     return <>
     <div className="flex flex-wrap buttom justify-center bg-black bg-center bg-cover">
       <div className="m-16 px-2 py-20 lg:px-20 lg:py-4 border-double border-8 rounded-md bg-black text-center bg-center bg-contain bg-no-repeat">
-          <h3 className="text-xs lg:text-4xl text-white font-semibold ">TokenMasks NFT</h3>
-          <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">FREE MINT : Up to 5 in the wallet</h1>
-          <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">※Please make sure that the network is set to Optimism</h1>
-          <a className="text-sm lg:text-2xl pt-1 text-white underline" href="https://optimistic.etherscan.io/address/0x735439e0b73001e578243a310fe870e50fb06b57" >contract address 0x735439e0b73001e578243a310fe870e50fb06b57</a><br />
-          <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 6000</h1>
-          { (mintNum < 6000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900" onClick={MetaMuskConnect}>FREE MINT</button>}
+          <h3 className="text-xs lg:text-4xl text-white font-semibold ">Oriental Jack NFT</h3>
+          <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">Pre MINT : 0.9 Eth</h1>
+          <h1 className="text-sm lg:text-2xl pt-1 text-white font-semibold ">Public MINT : 1 Eth</h1>
+          <h1 className="text-base lg:text-5xl pt-1 pb-2 text-white font-semibold "> {mintNum} / 1000</h1>
+          { (mintNum < 6000) && <button id="mintButton" className="px-4 py-2 my-1 sm:text-lg lg:text-2xl text-white font-semibold rounded  bg-gray-600 hover:bg-[#767676]" onClick={MetaMuskConnect}>NFT MINT</button>}
           { (mintNum < 6000 && <Toaster/>)}
           { (mintNum >= 6000) && <h3 className="sm:text-lg lg:text-3xl pt-1 text-white font-semibold ">End of sale</h3>}
-          <div className="py-4"><Image src="/OP_ETH_masks_GIF.gif" alt="Main Image" width={100} height={100}/></div>
+          <div className="py-4"><Image src="/NFT_001.jpg" alt="Main Image" width={100} height={100}/></div>
           <a className="text-sm lg:text-2xl pt-1 text-white underline" href="https://quixotic.io/collection/0x735439E0b73001E578243A310Fe870e50Fb06b57" >market palace</a>
       </div>
     </div>
@@ -126,13 +125,13 @@ const Home: NextPage = () => {
       <div className="">
       <Header />
       <Seo
-        pageTitle={'Witch Verse Labs'}
-        pageDescription={'Witch Verse Labs'}
-        pageImg={'https://witchverselabs-opti.vercel.app/_next/image?url=%2Fhezder_title.png&w=384&q=75'}
+        pageTitle={'DiscoverFeed'}
+        pageDescription={'DiscoverFeed'}
+        pageImg={''}
         pageImgWidth={1920}
         pageImgHeight={1005}
       />
-      <Image className="min-w-full" src="/mainWitchVerseLabs.gif" alt="Main Image" width={1920} height={400}/>
+      <Image className="min-w-full" src="/DiscoverFeed.png" alt="Main Image" width={1500} height={500}/>
       <MintButton />
       <Footer />
     </div></>
