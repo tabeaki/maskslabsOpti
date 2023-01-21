@@ -132,7 +132,7 @@ const Home: NextPage = () => {
         pageImgWidth={1920}
         pageImgHeight={1005}
       />
-      <Image className="min-w-full" src="/mainWitchVerseLabs.gif" alt="Main Image" width={1920} height={400}/>
+      <Image className="min-w-full" src="/tokenmasks.gif" alt="Main Image" width={1920} height={768}/>
       <MintButton />
       <Footer />
     </div></>
