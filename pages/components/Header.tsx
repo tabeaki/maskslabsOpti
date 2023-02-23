@@ -1,34 +1,42 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Image from 'next/image'
 import toast, { Toaster } from 'react-hot-toast'
+import { ethers } from "ethers"
 
  function Header() {
     
         // add Network
         const addChain = async() => {
-          try{
             await (window as any).ethereum.request({
-              method: 'wallet_addEthereumChain',
-              params: [{
-                chainId: '0x10',
-                chainName: 'Optimistic Ethereum',
-                nativeCurrency: {
-                    name: 'ETH',
-                    symbol: 'ETH',
-                    decimals: 4,
-                },
-                rpcUrls: ['https://mainnet.optimism.io'],
-              }],
-            })
-            toast('OK Connected')
-            console.log("try");
-          }catch(Exeption){
-            toast('Optimism Network alleady Connected')
-            console.log("Optimism Network alleady Connected");
-            console.log("catch");
-          }finally{
-            console.log("finally");
-          }
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId: '0xA' }],
+            });
+            const provider = await new ethers.providers.Web3Provider((window as any).ethereum);
+            await provider.send('eth_requestAccounts', []);
+  
+            try{
+              await (window as any).ethereum.request({
+                method: 'wallet_addEthereumChain',
+                params: [{
+                  chainId: '0xA',
+                  chainName: 'Optimistic Ethereum',
+                  nativeCurrency: {
+                      name: 'ETH',
+                      symbol: 'ETH',
+                      decimals: 4,
+                  },
+                  rpcUrls: ['https://mainnet.optimism.io'],
+                }],
+              })
+              toast('OK Connected')
+              console.log("try");
+            }catch(Exeption){
+              toast('Optimism Network alleady Connected')
+              console.log("Optimism Network alleady Connected");
+              console.log("catch");
+            }finally{
+              console.log("finally");
+            }
         }
 
 

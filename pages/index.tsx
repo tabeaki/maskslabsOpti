@@ -36,11 +36,7 @@ const Home: NextPage = () => {
       console.log("setSaleInfo")
   
       const provider = new ethers.providers.Web3Provider((window as any).ethereum)  
-      console.log(provider)
-  
-      const accounts =  await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner()
-      const result = Object.values(signer);
       const contract = new ethers.Contract(contractAddress, abi, signer);
 
       try{
@@ -57,32 +53,6 @@ const Home: NextPage = () => {
       }
     }
 
-    // add Network
-    const addChain = async() => {
-      try{
-        await (window as any).ethereum.request({
-          method: 'wallet_addEthereumChain',
-          params: [{
-            chainId: '0x10',
-            chainName: 'Optimistic Ethereum',
-            nativeCurrency: {
-                name: 'ETH',
-                symbol: 'ETH',
-                decimals: 4,
-            },
-            rpcUrls: ['https://mainnet.optimism.io'],
-          }],
-        })
-        console.log("try");
-        setSaleInfo();
-      }catch(Exeption){
-        console.log("Optimism Network aleady Connected");
-        console.log("catch");
-      }finally{
-        console.log("finally");
-      }
-    }
-    addChain();
     setSaleInfo();
 
   }, []);
